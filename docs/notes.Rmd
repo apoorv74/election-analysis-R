@@ -3,9 +3,26 @@ title: "Notes"
 output: github_document
 ---
 
+Data points to explore:
 
+1 - Male vs Female Turnout
+2 - Religion wise constituencies
+3 - Profile of a Member of Parliament
+4 - Caste/Seat distribution
+5 - Constituency wise turnout
+6 - Votes margin (Lowest/Highest/Median/Average)
 
+Datasets:
 
+1 - Ananay Agarwal, Neelesh Agrawal, Saloni Bhogale,
+Sudheendra Hangal, Francesca Refsum Jensenius, Mohit Kumar, Chinmay
+Narayan, Basim U Nissa, Priyamvada Trivedi, and Gilles Verniers. 2021.
+“TCPD Indian Elections Data v2.0", Trivedi Centre for Political Data,
+Ashoka University
+2 - Election Commission of India
 
+ 
+References:
 
-
+1 - How India really votes - Whole Numbers and Half Truths
+2 - The Verdict - Decoding India's Elections
