@@ -14,12 +14,9 @@ Data points to explore:
 
 Datasets:
 
-1 - Ananay Agarwal, Neelesh Agrawal, Saloni Bhogale,
-Sudheendra Hangal, Francesca Refsum Jensenius, Mohit Kumar, Chinmay
-Narayan, Basim U Nissa, Priyamvada Trivedi, and Gilles Verniers. 2021.
-“TCPD Indian Elections Data v2.0", Trivedi Centre for Political Data,
-Ashoka University
-2 - Election Commission of India
+1 - “TCPD Indian Elections Data v2.0″, Trivedi Centre for Political Data, Ashoka University.
+Ananay Agarwal, Neelesh Agrawal, Saloni Bhogale, Sudheendra Hangal, Francesca Refsum Jensenius, Mohit Kumar, Chinmay Narayan, Basim U Nissa, Priyamvada Trivedi, and Gilles Verniers. 2021. - [Link](https://tcpd.ashoka.edu.in/lok-dhaba/)
+2 - Datasets from the Election Commission of India - [Link](https://eci.gov.in/)
 
  
 References:
