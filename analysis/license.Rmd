@@ -7,15 +7,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-What license are you using for your code? See [choosealicense.com][choose] for
-help deciding. It's a convention to save a file `LICENSE` in the root of your
-Git repo that contains the license text.
+All source code and software in this repository are made available under the terms of the [MIT license](https://spdx.org/licenses/MIT.html)
 
-What license are you using for the written content on your site? It is
-traditional to choose a [Creative Commons][cc] license for this type of content.
-
-[choose]: https://choosealicense.com/
-[cc]: https://creativecommons.org/choose/
-
-How should others cite your work? It's a convention to save a file `CITATION`
-in the root of your Git repo that contains the citation information.
+For more info on how to use and cite the [Lokdhaba dataset](https://tcpd.ashoka.edu.in/lok-dhaba/) please refer to the dataset codebook [here](https://lokdhaba.ashoka.edu.in/static/media/2021Aug17LokDhabaCodebook_2_0.024d54af.pdf).
