@@ -1,0 +1,37 @@
+---
+title: "caste_wise_constituencies"
+author: "Apoorv Anand"
+date: "2021-12-29"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r}
+library(leaflet)
+library(viridis)
+leaflet(options = leafletOptions(minZoom = 7, maxZoom = 18))
+
+# Generate colours
+wardpal <- colorFactor(viridis(10), pc_shapefile$pc_category)
+
+# Read pc shapefile
+pc_shapefile <- geojsonio::geojson_read("data/gis/india_pc_2019_simplified.geojson",what = "sp")
+
+# Draw Map
+leaflet(pc_shapefile) %>%
+  addTiles() %>%
+  addPolygons(
+    stroke = FALSE,
+    color = "#fffff",
+    smoothFactor = 0.3,
+    fillColor =  ~ wardpal(pc_shapefile$pc_category),
+    fillOpacity = 1,
+    label = (
+      glue::glue("{pc_shapefile$pc_name}: {pc_shapefile$pc_category}")
+    )
+  )
+
+```
