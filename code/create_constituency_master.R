@@ -1,8 +1,11 @@
-library(tidyverse)
-library(readxl)
 
+# Read libraries ----------------------------------------------------------
 
-constituency_master_path <- "data/constituency-data-summary.xls"
+source("code/source-libraries.R")
+
+# Declare file paths ------------------------------------------------------
+
+constituency_master_path <- "data/raw/constituency-data-summary.xls"
 all_sheets <- readxl::excel_sheets(path = "data/constituency-data-summary.xls")
 
 # Process data from one sheet ---------------------------------------------
@@ -156,4 +159,4 @@ constituency_master_df <-
 
 # Export file -------------------------------------------------------------
 
-readr::write_csv(constituency_master_df, "data/constituency_master.csv")
+readr::write_csv(constituency_master_df, "data/processed/constituency_master.csv")
