@@ -1,6 +1,10 @@
 library(tidyverse)
 library(readxl)
+library(sf)
+library(geojsonsf)
 library(leaflet)
-library(viridis)
-
-
+library(paletteer)
+library(scales)
+library(DT)
+library(knitr)
+library(kableExtra)
