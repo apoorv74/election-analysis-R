@@ -1,4 +1,4 @@
----
+ ---
 title: "voter-turnout-gender"
 author: "Apoorv Anand"
 date: "2021-12-28"
@@ -9,7 +9,67 @@ editor_options:
 
 ## Introduction
 
-```{r}
+
+## Importing dataset
+
+```{r read-dataset}
+```
+
+## Processing dataset
+
+
+```{r processing-dataset}
+```
+
+```{r standardise-geography}
+```
+
+
+
+
+
+
+
+# Graph 1 - States arranged by highest-lowest female electors 
+
+```{r order-female-electors}
+state_df <- constituency_sub %>% group_by(state_name) %>% summarise(total_electors_w = sum(elector_General_w),
+                                                                    total_voters_w = sum(voter_General_w))
+library(scales)
+plot1 <- state_df %>% 
+  ggplot(aes(x = reorder(state_name, total_electors_w), y = total_electors_w))  +  
+  geom_bar(stat = "identity") + 
+  coord_flip() + 
+  scale_y_continuous(labels = comma) +
+  xlab("States/UT's") + 
+  ylab("Total Women Electors")
+plot1
+```
+
+
+
+# Graph 2 - States arranged by highest-lowest female voters 
+
+```{r order-female-voters}
+
+plot2 <- state_df %>% 
+  ggplot(aes(x = reorder(state_name, total_voters_w), y = total_voters_w))  +  
+  geom_bar(stat = "identity") + 
+  coord_flip() + 
+  scale_y_continuous(labels = comma) +
+  xlab("States/UT's") + 
+  ylab("Total Women Voters")
+plot2
 
 ```
+
+
+
+
+```{r basic-violin-plot}
+# Most basic violin chart
+
+ggplot(constituency_sub, aes(y=elector_General_w[constituency_sub$state_name="Bihar-S04"],x = "country",fill="country")) + geom_violin()
+```
+
 
