@@ -1,32 +1,32 @@
 id,state_name,constituency_name,state_name_dm,constituency_name_dm
-1,Andhra Pradesh-S01,Aruku ,andhra pradesh,araku
+1,Andhra Pradesh-S01,Aruku,andhra pradesh,araku
 2,Andhra Pradesh-S01,Srikakulam,andhra pradesh,srikakulam
 3,Andhra Pradesh-S01,Vizianagaram,andhra pradesh,vizianagaram
 4,Andhra Pradesh-S01,Visakhapatnam,andhra pradesh,visakhapatnam
 5,Andhra Pradesh-S01,Anakapalli,andhra pradesh,anakapalli
 6,Andhra Pradesh-S01,Kakinada,andhra pradesh,kakinada
-7,Andhra Pradesh-S01,Amalapuram ,andhra pradesh,amalapuram
+7,Andhra Pradesh-S01,Amalapuram,andhra pradesh,amalapuram
 8,Andhra Pradesh-S01,Rajahmundry,andhra pradesh,rajahmundry
 9,Andhra Pradesh-S01,Narsapuram,andhra pradesh,narsapuram
-10,Andhra Pradesh-S01,Eluru ,andhra pradesh,eluru
-11,Andhra Pradesh-S01,Machilipatnam ,andhra pradesh,machilipatnam
+10,Andhra Pradesh-S01,Eluru,andhra pradesh,eluru
+11,Andhra Pradesh-S01,Machilipatnam,andhra pradesh,machilipatnam
 12,Andhra Pradesh-S01,Vijayawada,andhra pradesh,vijayawada
 13,Andhra Pradesh-S01,Guntur,andhra pradesh,guntur
 14,Andhra Pradesh-S01,Narasaraopet,andhra pradesh,narasaraopet
-15,Andhra Pradesh-S01,Bapatla ,andhra pradesh,bapatla
-16,Andhra Pradesh-S01,Ongole ,andhra pradesh,ongole
+15,Andhra Pradesh-S01,Bapatla,andhra pradesh,bapatla
+16,Andhra Pradesh-S01,Ongole,andhra pradesh,ongole
 17,Andhra Pradesh-S01,Nandyal,andhra pradesh,nandyal
 18,Andhra Pradesh-S01,Kurnool,andhra pradesh,kurnool
 19,Andhra Pradesh-S01,Anantapur,andhra pradesh,anantapuramu
 20,Andhra Pradesh-S01,Hindupur,andhra pradesh,hindupur
 21,Andhra Pradesh-S01,Kadapa,andhra pradesh,kadapa
 22,Andhra Pradesh-S01,Nellore,andhra pradesh,nellore
-23,Andhra Pradesh-S01,Tirupati ,andhra pradesh,tirupati
+23,Andhra Pradesh-S01,Tirupati,andhra pradesh,tirupati
 24,Andhra Pradesh-S01,Rajampet,andhra pradesh,rajampet
-25,Andhra Pradesh-S01,Chittoor ,andhra pradesh,chittoor
+25,Andhra Pradesh-S01,Chittoor,andhra pradesh,chittoor
 26,Arunachal Pradesh-S02,ARUNACHAL WEST,arunachal pradesh,arunachal west
 27,Arunachal Pradesh-S02,ARUNACHAL EAST,arunachal pradesh,arunachal east
-28,Assam-S03,Karimganj ,assam,karimganj
+28,Assam-S03,Karimganj,assam,karimganj
 29,Assam-S03,Silchar,assam,silchar
 30,Assam-S03,Autonomous District,assam,autonomous district
 31,Assam-S03,Dhubri,assam,dhubri
@@ -122,12 +122,12 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 121,Himachal Pradesh-S08,Mandi,himachal pradesh,mandi
 122,Himachal Pradesh-S08,Hamirpur,himachal pradesh,hamirpur
 123,Himachal Pradesh-S08,Shimla,himachal pradesh,shimla
-124,Jammu & Kashmir-S09,Baramulla,jammu and kashmir,baramulla
-125,Jammu & Kashmir-S09,Srinagar,jammu and kashmir,srinagar
-126,Jammu & Kashmir-S09,Anantnag,jammu and kashmir,anantnag
-127,Jammu & Kashmir-S09,Ladakh,jammu and kashmir,ladakh
-128,Jammu & Kashmir-S09,Udhampur,jammu and kashmir,udhampur
-129,Jammu & Kashmir-S09,Jammu,jammu and kashmir,jammu
+124,Jammu & Kashmir-S09,Baramulla,jammu & kashmir,baramulla
+125,Jammu & Kashmir-S09,Srinagar,jammu & kashmir,srinagar
+126,Jammu & Kashmir-S09,Anantnag,jammu & kashmir,anantnag
+127,Jammu & Kashmir-S09,Ladakh,jammu & kashmir,ladakh
+128,Jammu & Kashmir-S09,Udhampur,jammu & kashmir,udhampur
+129,Jammu & Kashmir-S09,Jammu,jammu & kashmir,jammu
 130,Karnataka-S10,Chikkodi,karnataka,chikodi
 131,Karnataka-S10,Belgaum,karnataka,belagavi
 132,Karnataka-S10,Bagalkot,karnataka,bagalkot
@@ -164,14 +164,14 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 163,Kerala-S11,Malappuram,kerala,malappuram
 164,Kerala-S11,Ponnani,kerala,ponnani
 165,Kerala-S11,Palakkad,kerala,palakkad
-166,Kerala-S11,Alathur ,kerala,alathur
+166,Kerala-S11,Alathur,kerala,alathur
 167,Kerala-S11,Thrissur,kerala,thrissur
 168,Kerala-S11,Chalakudy,kerala,chalakudy
 169,Kerala-S11,Ernakulam,kerala,ernakulam
 170,Kerala-S11,Idukki,kerala,idukki
 171,Kerala-S11,Kottayam,kerala,kottayam
 172,Kerala-S11,Alappuzha,kerala,alappuzha
-173,Kerala-S11,Mavelikkara ,kerala,mavelikara
+173,Kerala-S11,Mavelikkara,kerala,mavelikara
 174,Kerala-S11,Pathanamthitta,kerala,pathanamthitta
 175,Kerala-S11,Kollam,kerala,kollam
 176,Kerala-S11,Attingal,kerala,attingal
@@ -205,28 +205,28 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 204,Madhya Pradesh-S12,KHARGONE,madhya pradesh,khargone
 205,Madhya Pradesh-S12,KHANDWA,madhya pradesh,khandwa
 206,Madhya Pradesh-S12,BETUL,madhya pradesh,betul
-207,Maharashtra-S13,Nandurbar ,maharashtra,nandurbar
+207,Maharashtra-S13,Nandurbar,maharashtra,nandurbar
 208,Maharashtra-S13,Dhule,maharashtra,dhule
 209,Maharashtra-S13,Jalgaon,maharashtra,jalgaon
 210,Maharashtra-S13,Raver,maharashtra,raver
 211,Maharashtra-S13,Buldhana,maharashtra,buldhana
 212,Maharashtra-S13,Akola,maharashtra,akola
-213,Maharashtra-S13,Amravati ,maharashtra,amravati
+213,Maharashtra-S13,Amravati,maharashtra,amravati
 214,Maharashtra-S13,Wardha,maharashtra,wardha
-215,Maharashtra-S13,Ramtek ,maharashtra,ramtek
-216,Maharashtra-S13,Nagpur ,maharashtra,nagpur
+215,Maharashtra-S13,Ramtek,maharashtra,ramtek
+216,Maharashtra-S13,Nagpur,maharashtra,nagpur
 217,Maharashtra-S13,Bhandara - gondiya,maharashtra,bhandara-gondiya
 218,Maharashtra-S13,Gadchiroli-Chimur,maharashtra,gadchiroli-chimur
 219,Maharashtra-S13,Chandrapur,maharashtra,chandrapur
 220,Maharashtra-S13,Yavatmal-Washim,maharashtra,yavatmal-washim
-221,Maharashtra-S13,Hingoli ,maharashtra,hingoli
+221,Maharashtra-S13,Hingoli,maharashtra,hingoli
 222,Maharashtra-S13,Nanded,maharashtra,nanded
 223,Maharashtra-S13,Parbhani,maharashtra,parbhani
 224,Maharashtra-S13,Jalna,maharashtra,jalna
 225,Maharashtra-S13,Aurangabad,maharashtra,aurangabad
-226,Maharashtra-S13,Dindori ,maharashtra,dindori
+226,Maharashtra-S13,Dindori,maharashtra,dindori
 227,Maharashtra-S13,Nashik,maharashtra,nashik
-228,Maharashtra-S13,Palghar ,maharashtra,palghar
+228,Maharashtra-S13,Palghar,maharashtra,palghar
 229,Maharashtra-S13,Bhiwandi,maharashtra,bhiwandi
 230,Maharashtra-S13,Kalyan,maharashtra,kalyan
 231,Maharashtra-S13,Thane,maharashtra,thane
@@ -241,12 +241,12 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 240,Maharashtra-S13,Pune,maharashtra,pune
 241,Maharashtra-S13,Baramati,maharashtra,baramati
 242,Maharashtra-S13,Shirur,maharashtra,shirur
-243,Maharashtra-S13,Ahmadnagar ,maharashtra,ahmednagar
+243,Maharashtra-S13,Ahmadnagar,maharashtra,ahmednagar
 244,Maharashtra-S13,Shirdi,maharashtra,shirdi
 245,Maharashtra-S13,Beed,maharashtra,beed
 246,Maharashtra-S13,Osmanabad,maharashtra,osmanabad
-247,Maharashtra-S13,Latur ,maharashtra,latur
-248,Maharashtra-S13,Solapur ,maharashtra,solapur
+247,Maharashtra-S13,Latur,maharashtra,latur
+248,Maharashtra-S13,Solapur,maharashtra,solapur
 249,Maharashtra-S13,Madha,maharashtra,madha
 250,Maharashtra-S13,Sangli,maharashtra,sangli
 251,Maharashtra-S13,Satara,maharashtra,satara
@@ -256,30 +256,30 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 255,Manipur-S14,Inner manipur,manipur,inner manipur
 256,Manipur-S14,Outer manipur,manipur,outer manipur
 257,Meghalaya-S15,Shillong,meghalaya,shillong
-258,Meghalaya-S15,Tura ,meghalaya,tura
+258,Meghalaya-S15,Tura,meghalaya,tura
 259,Mizoram-S16,MIZORAM,mizoram,mizoram
 260,Nagaland-S17,Nagaland,nagaland,nagaland
 261,Odisha-S18,Bargarh,orissa,bargarh
-262,Odisha-S18,Sundargarh ,orissa,sundargarh
+262,Odisha-S18,Sundargarh,orissa,sundargarh
 263,Odisha-S18,Sambalpur,orissa,sambalpur
-264,Odisha-S18,Keonjhar ,orissa,keonjhar
-265,Odisha-S18,Mayurbhanj ,orissa,mayurbhanj
+264,Odisha-S18,Keonjhar,orissa,keonjhar
+265,Odisha-S18,Mayurbhanj,orissa,mayurbhanj
 266,Odisha-S18,Balasore,orissa,balasore
-267,Odisha-S18,Bhadrak ,orissa,bhadrak
-268,Odisha-S18,Jajpur ,orissa,jajpur
+267,Odisha-S18,Bhadrak,orissa,bhadrak
+268,Odisha-S18,Jajpur,orissa,jajpur
 269,Odisha-S18,Dhenkanal,orissa,dhenkanal
 270,Odisha-S18,Bolangir,orissa,bolangir
 271,Odisha-S18,Kalahandi,orissa,kalahandi
-272,Odisha-S18,Nabarangpur ,orissa,nabarangpur
+272,Odisha-S18,Nabarangpur,orissa,nabarangpur
 273,Odisha-S18,Kandhamal,orissa,kandhamal
 274,Odisha-S18,Cuttack,orissa,cuttack
-275,Odisha-S18,Kendrapara ,orissa,kendrapara
-276,Odisha-S18,Jagatsinghpur ,orissa,jagatsinghpur
+275,Odisha-S18,Kendrapara,orissa,kendrapara
+276,Odisha-S18,Jagatsinghpur,orissa,jagatsinghpur
 277,Odisha-S18,Puri,orissa,puri
 278,Odisha-S18,Bhubaneswar,orissa,bhubaneswar
 279,Odisha-S18,Aska,orissa,aska
 280,Odisha-S18,Berhampur,orissa,berhampur
-281,Odisha-S18,Koraput ,orissa,koraput
+281,Odisha-S18,Koraput,orissa,koraput
 282,Punjab-S19,Gurdaspur,punjab,gurdaspur
 283,Punjab-S19,Amritsar,punjab,amritsar
 284,Punjab-S19,Khadoor Sahib,punjab,khadoor sahib
@@ -319,12 +319,12 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 318,Rajasthan-S20,Kota,rajasthan,kota
 319,Rajasthan-S20,JHALAWAR-BARAN,rajasthan,jhalawar-baran
 320,Sikkim-S21,Sikkim,sikkim,sikkim
-321,Tamil Nadu-S22,Thiruvallur ,tamil nadu,thiruvallur
+321,Tamil Nadu-S22,Thiruvallur,tamil nadu,thiruvallur
 322,Tamil Nadu-S22,Chennai North,tamil nadu,chennai north
 323,Tamil Nadu-S22,Chennai South,tamil nadu,chennai south
 324,Tamil Nadu-S22,Chennai central,tamil nadu,chennai central
 325,Tamil Nadu-S22,Sriperumbudur,tamil nadu,sriperumbudur
-326,Tamil Nadu-S22,Kancheepuram ,tamil nadu,kancheepuram
+326,Tamil Nadu-S22,Kancheepuram,tamil nadu,kancheepuram
 327,Tamil Nadu-S22,Arakkonam,tamil nadu,arakkonam
 328,Tamil Nadu-S22,Vellore,tamil nadu,vellore
 329,Tamil Nadu-S22,Krishnagiri,tamil nadu,krishnagiri
@@ -337,25 +337,25 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 336,Tamil Nadu-S22,Namakkal,tamil nadu,namakkal
 337,Tamil Nadu-S22,Erode,tamil nadu,erode
 338,Tamil Nadu-S22,Tiruppur,tamil nadu,tiruppur
-339,Tamil Nadu-S22,Nilgiris ,tamil nadu,nilgiris
+339,Tamil Nadu-S22,Nilgiris,tamil nadu,nilgiris
 340,Tamil Nadu-S22,Coimbatore,tamil nadu,coimbatore
 341,Tamil Nadu-S22,Pollachi,tamil nadu,pollachi
 342,Tamil Nadu-S22,Dindigul,tamil nadu,dindigul
 343,Tamil Nadu-S22,Karur,tamil nadu,karur
 344,Tamil Nadu-S22,Tiruchirappalli,tamil nadu,tiruchirappalli
 345,Tamil Nadu-S22,Perambalur,tamil nadu,perambalur
-346,Tamil Nadu-S22,Cuddalore ,tamil nadu,cuddalore
-347,Tamil Nadu-S22,Chidambaram ,tamil nadu,chidambaram
+346,Tamil Nadu-S22,Cuddalore,tamil nadu,cuddalore
+347,Tamil Nadu-S22,Chidambaram,tamil nadu,chidambaram
 348,Tamil Nadu-S22,Mayiladuthurai,tamil nadu,mayiladuturai
-349,Tamil Nadu-S22,Nagapattinam ,tamil nadu,nagapattinam
+349,Tamil Nadu-S22,Nagapattinam,tamil nadu,nagapattinam
 350,Tamil Nadu-S22,Thanjavur,tamil nadu,thanjavur
 351,Tamil Nadu-S22,Sivaganga,tamil nadu,sivaganga
 352,Tamil Nadu-S22,Madurai,tamil nadu,madurai
-353,Tamil Nadu-S22,Theni ,tamil nadu,theni
+353,Tamil Nadu-S22,Theni,tamil nadu,theni
 354,Tamil Nadu-S22,Virudhunagar,tamil nadu,virudhunagar
 355,Tamil Nadu-S22,Ramanathapuram,tamil nadu,ramanathapuram
 356,Tamil Nadu-S22,Thoothukkudi,tamil nadu,thoothukudi
-357,Tamil Nadu-S22,Tenkasi ,tamil nadu,tenkasi
+357,Tamil Nadu-S22,Tenkasi,tamil nadu,tenkasi
 358,Tamil Nadu-S22,Tirunelveli,tamil nadu,tirunelveli
 359,Tamil Nadu-S22,Kanniyakumari,tamil nadu,kanyakumari
 360,Tripura-S23,Tripura West,tripura,tripura west
@@ -512,9 +512,9 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 511,Uttarakhand-S28,Almora,uttarakhand,almora
 512,Uttarakhand-S28,Nainital-udhamsingh Nagar,uttarakhand,nainital-udhamsingh nagar
 513,Uttarakhand-S28,Hardwar,uttarakhand,haridwar
-514,Telangana-S29,Adilabad ,telangana,adilabad
-515,Telangana-S29,Peddapalle ,telangana,peddapalli
-516,Telangana-S29,Karimnagar ,telangana,karimnagar
+514,Telangana-S29,Adilabad,telangana,adilabad
+515,Telangana-S29,Peddapalle,telangana,peddapalli
+516,Telangana-S29,Karimnagar,telangana,karimnagar
 517,Telangana-S29,Nizamabad,telangana,nizamabad
 518,Telangana-S29,Zahirabad,telangana,zahirabad
 519,Telangana-S29,Medak,telangana,medak
@@ -525,20 +525,20 @@ id,state_name,constituency_name,state_name_dm,constituency_name_dm
 524,Telangana-S29,Mahbubnagar,telangana,mahabubnagar
 525,Telangana-S29,Nagarkurnool,telangana,nagarkurnool
 526,Telangana-S29,Nalgonda,telangana,nalgonda
-527,Telangana-S29,Bhongir ,telangana,bhuvanagiri
+527,Telangana-S29,Bhongir,telangana,bhuvanagiri
 528,Telangana-S29,Warangal,telangana,warangal
-529,Telangana-S29,Mahabubabad  ,telangana,mahabubabad
-530,Telangana-S29,Khammam ,telangana,khammam
-531,Andaman & Nicobar Islands-U01,Andaman & Nicobar Islands,andaman and nicobar,andaman and nicobar islands
+529,Telangana-S29,Mahabubabad,telangana,mahabubabad
+530,Telangana-S29,Khammam,telangana,khammam
+531,Andaman & Nicobar Islands-U01,Andaman & Nicobar Islands,andaman & nicobar islands,andaman and nicobar islands
 532,Chandigarh-U02,CHANDIGARH,chandigarh,chandigarh
-533,Dadra & Nagar Haveli-U03,Dadra And Nagar Haveli,dadra and nagar haveli,dadra and nagar haveli
-534,Daman & Diu-U04,Daman & diu,daman and diu,daman and diu
-535,NCT OF Delhi-U05,CHANDNI CHOWK                 ,delhi,chandni chowk
-536,NCT OF Delhi-U05,NORTH EAST DELHI              ,delhi,north east delhi
-537,NCT OF Delhi-U05,EAST DELHI                    ,delhi,east delhi
-538,NCT OF Delhi-U05,NEW DELHI                     ,delhi,new delhi
-539,NCT OF Delhi-U05,NORTH WEST DELHI              ,delhi,north west delhi
-540,NCT OF Delhi-U05,WEST DELHI                    ,delhi,west delhi
-541,NCT OF Delhi-U05,SOUTH DELHI                   ,delhi,south delhi
+533,Dadra & Nagar Haveli-U03,Dadra And Nagar Haveli,dadra & nagar haveli,dadra and nagar haveli
+534,Daman & Diu-U04,Daman & diu,daman & diu,daman and diu
+535,NCT OF Delhi-U05,CHANDNI CHOWK,delhi,chandni chowk
+536,NCT OF Delhi-U05,NORTH EAST DELHI,delhi,north east delhi
+537,NCT OF Delhi-U05,EAST DELHI,delhi,east delhi
+538,NCT OF Delhi-U05,NEW DELHI,delhi,new delhi
+539,NCT OF Delhi-U05,NORTH WEST DELHI,delhi,north west delhi
+540,NCT OF Delhi-U05,WEST DELHI,delhi,west delhi
+541,NCT OF Delhi-U05,SOUTH DELHI,delhi,south delhi
 542,Lakshadweep-U06,Lakshadweep,lakshadweep,lakshadweep
 543,Puducherry-U07,Puducherry,puducherry,puducherry
