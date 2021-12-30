@@ -1,5 +1,5 @@
  ---
-title: "voter-turnout-gender"
+title: "Electoral participation in 2019 general polls"
 author: "Apoorv Anand"
 date: "2021-12-28"
 output: workflowr::wflow_html
@@ -7,69 +7,228 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
-
-
-## Importing dataset
-
-```{r read-dataset}
+```{r source-files, include=FALSE}
+source("code/source-libraries.R")
+source("code/leaflet-options.R")
+source("code/merge-data-gis.R")
 ```
 
-## Processing dataset
+[eci]: https://eci.gov.in/
+
+# Introduction
+
+The [Election Commission of India][eci] collects **voter level data** that is disaggregated by gender ( _Male_, _Female_ and _Third Gender_) for each constituency. This data can help us in figuring out how men and women from each parliamentary constituency participated in the election. Other than the voter level data, the ECI also maintains **data for each candidate** that participated in the election for every constituency.
+
+The visualisations below will help us explore the following data points:
+
+## For Voters
+
+1. Constituencies where the female participation in terms of number of votes was more than the male votes.
+2. Constituencies where the percentage of eligible female vote was more than the percentage of male female votes. The eligible vote percentage is calculated as a ratio of `Total votes/Total electorate`. 
 
 
-```{r processing-dataset}
+### Analysis - Gender wise participation in polls
+
+#### Where more women voted than men overall
+
+```{r graph-overall-participation, echo=FALSE}
+
+# Map color palette to variable
+
+pal <- colorFactor(palette = map_colour_palette,domain = constituency_map_file$flag_more_women)
+
+labels <- sprintf(
+  "<strong>%s</strong><br/> Total women votes: %s",
+  stringr::str_to_title(constituency_map_file$constituency_name_dm), comma(constituency_map_file$voter_General_w,accuracy = 1)
+) %>% lapply(htmltools::HTML)
+
+# Custom legend values 
+# Reference - https://stackoverflow.com/questions/47410833/how-to-customize-legend-labels-in-r-leaflet
+
+legend_values <- c("More male votes","More female votes")
+
+constituency_map_file %>% leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    color = "white",
+    opacity = 1,
+    weight = 1,
+    dashArray = "2",
+    smoothFactor = 0.3,
+    fillColor =  pal(constituency_map_file$flag_more_women),
+    fillOpacity = 1,
+    label = labels,
+    highlightOptions = highlightOptions(
+      weight = 2,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.7,
+      bringToFront = TRUE
+    )
+  ) %>% addLegend(
+    pal = pal,
+    values = ~ flag_more_women,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright",
+    labFormat = function(type, cuts, p) {
+      paste0(legend_values)
+    }
+  )
+
 ```
 
-```{r standardise-geography}
+#### Vote percentage within gender categories
+
+```{r graph-gender-wise-participation, echo=FALSE}
+pal <- colorFactor(palette = map_colour_palette,domain = constituency_map_file$flag_eligible_women)
+
+labels <- sprintf(
+  "<strong>%s</strong><br/> Women voting percentage: %s<br/> Men voting percentage: %s",
+  stringr::str_to_title(constituency_map_file$constituency_name_dm), percent(constituency_map_file$eligible_vote_w,accuracy = 2),percent(constituency_map_file$eligible_vote_m,accuracy = 2)
+) %>% lapply(htmltools::HTML)
+
+legend_values <- c("More eligible men voted","More eligible women voted")
+
+constituency_map_file %>% leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    color = "white",
+    opacity = 1,
+    weight = 1,
+    dashArray = "2",
+    smoothFactor = 0.3,
+    fillColor =  pal(constituency_map_file$flag_eligible_women),
+    fillOpacity = 1,
+    label = labels,
+    highlightOptions = highlightOptions(
+    weight = 2,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE)
+  ) %>% 
+  addLegend(
+    pal = pal,
+    values = ~ flag_eligible_women,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright",
+    labFormat = function(type, cuts, p) {
+      paste0(legend_values)
+    }
+  )
+
+
+```
+
+## For Candidates
+
+1. Constituencies with at-least one women candidate
+2. Constituencies where the ratio of women to men candidates was at-least 30 percent. _For example, If there are 10 candidates in a constituency, then at-least 3 of them are women._ 
+
+
+### Analysis - Analysis of candidates
+
+#### Constituencies with at-least one women candidate
+
+```{r graph-one-women-candidate, echo=FALSE}
+
+pal <- colorFactor(palette = map_colour_palette,domain = constituency_map_file$flag_contested_w)
+
+labels <- sprintf(
+  "<strong>%s</strong><br/> Women Candidate: %s<br/> Total Candidates: %s",
+  stringr::str_to_title(constituency_map_file$constituency_name_dm),
+  comma(constituency_map_file$candidate_Contested_w, accuracy = 1),
+  comma((
+    constituency_map_file$candidate_Contested_m + constituency_map_file$candidate_Contested_w
+  ),accuracy = 1)
+) %>% 
+  lapply(htmltools::HTML)
+
+legend_values <- c("No female candidates","At-least one female candidate")
+
+constituency_map_file %>% leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    color = "white",
+    opacity = 1,
+    weight = 1,
+    dashArray = "2",
+    smoothFactor = 0.3,
+    fillColor =  pal(constituency_map_file$flag_contested_w),
+    fillOpacity = 1,
+    label = labels,
+    highlightOptions = highlightOptions(
+    weight = 2,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE)
+  ) %>% 
+  addLegend(
+    pal = pal,
+    values = ~ flag_contested_w,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright",
+    labFormat = function(type, cuts, p) {
+      paste0(legend_values)
+    }
+  )
+
+
 ```
 
 
+#### Higher participation of women candidates
 
 
+```{r women-candidate-participation, echo=FALSE}
+
+pal <- colorFactor(palette = map_colour_palette,domain = constituency_map_file$flag_contested_w_30)
+
+labels <- sprintf(
+  "<strong>%s</strong><br/> Women Candidate: %s<br/> Total Candidates: %s",
+  stringr::str_to_title(constituency_map_file$constituency_name_dm),
+  comma(constituency_map_file$candidate_Contested_w, accuracy = 1),
+  comma((
+    constituency_map_file$candidate_Contested_m + constituency_map_file$candidate_Contested_w
+  ),accuracy = 1)
+) %>% 
+  lapply(htmltools::HTML)
+
+legend_values <- c("More male candidates","At-least 30% female candidates")
+
+constituency_map_file %>% leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    color = "white",
+    opacity = 1,
+    weight = 1,
+    dashArray = "2",
+    smoothFactor = 0.3,
+    fillColor =  pal(constituency_map_file$flag_contested_w_30),
+    fillOpacity = 1,
+    label = labels,
+    highlightOptions = highlightOptions(
+    weight = 2,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE)
+  ) %>% 
+  addLegend(
+    pal = pal,
+    values = ~ flag_contested_w_30,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright",
+    labFormat = function(type, cuts, p) {
+      paste0(legend_values)
+    }
+  )
 
 
-
-# Graph 1 - States arranged by highest-lowest female electors 
-
-```{r order-female-electors}
-state_df <- constituency_sub %>% group_by(state_name) %>% summarise(total_electors_w = sum(elector_General_w),
-                                                                    total_voters_w = sum(voter_General_w))
-library(scales)
-plot1 <- state_df %>% 
-  ggplot(aes(x = reorder(state_name, total_electors_w), y = total_electors_w))  +  
-  geom_bar(stat = "identity") + 
-  coord_flip() + 
-  scale_y_continuous(labels = comma) +
-  xlab("States/UT's") + 
-  ylab("Total Women Electors")
-plot1
 ```
-
-
-
-# Graph 2 - States arranged by highest-lowest female voters 
-
-```{r order-female-voters}
-
-plot2 <- state_df %>% 
-  ggplot(aes(x = reorder(state_name, total_voters_w), y = total_voters_w))  +  
-  geom_bar(stat = "identity") + 
-  coord_flip() + 
-  scale_y_continuous(labels = comma) +
-  xlab("States/UT's") + 
-  ylab("Total Women Voters")
-plot2
-
-```
-
-
-
-
-```{r basic-violin-plot}
-# Most basic violin chart
-
-ggplot(constituency_sub, aes(y=elector_General_w[constituency_sub$state_name="Bihar-S04"],x = "country",fill="country")) + geom_violin()
-```
-
 

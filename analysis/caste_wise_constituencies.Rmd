@@ -1,5 +1,5 @@
 ---
-title: "caste_wise_constituencies"
+title: "Caste wise Costituencies"
 author: "Apoorv Anand"
 date: "2021-12-29"
 output: workflowr::wflow_html
@@ -7,31 +7,145 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
+```{r source-files, include=FALSE}
+source("code/source-libraries.R")
+source("code/leaflet-options.R")
+source("code/merge-data-gis.R")
+```
 
-```{r}
-library(leaflet)
-library(viridis)
-leaflet(options = leafletOptions(minZoom = 7, maxZoom = 18))
+# Introduction
 
-# Generate colours
-wardpal <- colorFactor(viridis(10), pc_shapefile$pc_category)
+For the purpose of constituting the Lok Sabha, the whole country has been divided into 543 Parliamentary Constituencies, each one of which elects one member. The members of the Lok Sabha are elected directly by the eligible voters. Some seats are reserved in Lok Sabha for the members of the Schedule
+Castes and Scheduled Tribes. As per the order issued by the Delimitation Commission in 2008 , 412 are general, 84 seats are reserved for Scheduled Castes and 47 seats for the Scheduled Tribes. [Source](http://mea.gov.in/Uploads/PublicationDocs/19167_State_wise_seats_in_Lok_Sabha_18-03-2009.pdf)
 
-# Read pc shapefile
-pc_shapefile <- geojsonio::geojson_read("data/gis/india_pc_2019_simplified.geojson",what = "sp")
+## Analysis - Caste based distribution of parliamentary constituencies
 
-# Draw Map
-leaflet(pc_shapefile) %>%
+
+```{r caste-wise-seat-distribution, echo=FALSE}
+
+# Map color palette to variable
+
+pal <- colorFactor(palette = map_colour_palette,domain = constituency_map_file$constituency_type_updated)
+
+labels <- sprintf(
+  "<strong>%s</strong><br/> Constituency Type: %s",
+  stringr::str_to_title(constituency_map_file$constituency_name_dm),
+  stringr::str_to_upper(constituency_map_file$constituency_type_updated)
+) %>% lapply(htmltools::HTML)
+
+legend_values <- c("General","SC","ST")
+
+constituency_map_file %>% leaflet() %>%
   addTiles() %>%
   addPolygons(
-    stroke = FALSE,
-    color = "#fffff",
+    color = "white",
+    opacity = 1,
+    weight = 1,
+    dashArray = "2",
     smoothFactor = 0.3,
-    fillColor =  ~ wardpal(pc_shapefile$pc_category),
+    fillColor =  pal(constituency_map_file$constituency_type_updated),
     fillOpacity = 1,
-    label = (
-      glue::glue("{pc_shapefile$pc_name}: {pc_shapefile$pc_category}")
+    label = labels,
+    highlightOptions = highlightOptions(
+      weight = 2,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.7,
+      bringToFront = TRUE
     )
+  ) %>% addLegend(
+    pal = pal,
+    values = ~ constituency_type_updated,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright",
+    labFormat = function(type, cuts, p) {
+      paste0(legend_values)
+    }
   )
+
+```
+
+## Caste - Seat Distribution
+
+In 2019 elections, there were only 19 seats where there were at-least 30% women candidates. The caste wise distribution of these seats is as follows:
+
+
+:::: {style="display: flex;"}
+
+::: {}
+```{r table-caste-women-participation, echo=FALSE}
+caste_women_participation <- table(constituency_analysis_file$constituency_type_updated, constituency_analysis_file$flag_contested_w_30) %>% data.frame
+caste_women_participation <- caste_women_participation %>% pivot_wider(names_from = Var2, values_from = Freq)
+
+caste_women_participation$total_seats <- caste_women_participation$yes+caste_women_participation$no
+knitr::kable(caste_women_participation[,c("Var1","total_seats","yes")],col.names = c("Caste","Total Seats","With at-least 30% women candidates")) %>% kable_material(c("striped", "hover")) %>% kable_styling(full_width = F, position = "left")
+```
+
+:::
+
+::: {}
+```{r graph-caste-women-participation, echo=FALSE}
+caste_women_participation$women_c30_percent <- round(caste_women_participation$yes/(caste_women_participation$no+caste_women_participation$yes)*100,1)
+names(caste_women_participation)[1] <- "Caste"
+
+caste_women_participation %>% 
+  ggplot(aes(x = Caste, y = women_c30_percent, fill = Caste)) + 
+  geom_bar(stat = "identity") + theme_minimal() +
+  ggtitle(label = "Women candidate participation") +
+  ylab("Percent seats with more than 30% women candidates") +
+  geom_text(aes(label = glue::glue("{women_c30_percent}%")), vjust = 0) +
+  scale_fill_manual(values = c("#5DA5DA","#A55F60","#00FF7F"),guide="none")
+```
+
+:::
+
+::::
+
+## List of Seats with more women participation
+
+```{r list-of-seats-women30, echo=FALSE}
+
+women_30_table <-
+  constituency_analysis_file %>% 
+  select(
+    state_name_updated,
+    constituency_name_updated,
+    constituency_type_updated,
+    candidate_Contested_m,
+    candidate_Contested_w,
+    polling_percentage,
+    flag_contested_w_30
+  ) %>% filter(flag_contested_w_30=="yes")
+
+women_30_table$flag_contested_w_30 <- NULL
+datatable(women_30_table,colnames = c("State","Constituency","Type","# Male Candidates","# Female Candidates","Polling percentage"),options = list(searching = FALSE))
+
+```
+
+## Distribution of SC and ST candidates for General Constituencies
+
+As per the rules, a few seats are reserved for SC and ST, but what does the distribution of seats look like for General Parliament Constituencies ? Do we have a fair representation of candidates from all castes within the general category seats ?
+
+```{r graph-general-pc-candidate-caste-ratio, echo=FALSE}
+pc_candidate_caste <- constituency_analysis_file[,c("id","state_name_updated","constituency_type_updated","GENERAL","SC","ST")] %>% filter(constituency_type_updated=="GEN")
+pc_candidate_caste$flag_caste <- pc_candidate_caste$SC+pc_candidate_caste$ST
+pc_candidate_caste$flag_caste <- ifelse(pc_candidate_caste$flag_caste>0,1,0)
+
+pc_candidate_caste_ratio <- pc_candidate_caste %>% group_by(state_name_updated, constituency_type_updated) %>% summarise(percent_seats=round(sum(flag_caste)/n()*100,2)) %>% data.frame()
+
+names(pc_candidate_caste_ratio)[] <- c("State","Type","Percent Seats with SC/ST participation")
+
+# pc_candidate_caste_ratio$`General Seats with SC/ST candidates` <-
+#   as.character(pc_candidate_caste_ratio$`General Seats with SC/ST candidates`) %>% as.factor()
+
+pc_candidate_caste_ratio %>%
+  ggplot(
+    aes(x = reorder(State,`Percent Seats with SC/ST participation`),y = `Percent Seats with SC/ST participation`, fill = Type)
+  ) +
+  geom_bar(stat = "identity") + 
+  coord_flip() +
+  theme_minimal() +
+  ggtitle("SC/ST candidate participation in General Constituencies") + scale_fill_manual(values = c("#5DA5DA"), guide = "none") + xlab("States")
 
 ```

@@ -1,0 +1,60 @@
+---
+title: "Candidate Profile Analysis"
+author: "Apoorv Anand"
+date: "2021-12-30"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+
+```{r source-files, include=FALSE}
+source("code/source-libraries.R")
+source("code/leaflet-options.R")
+source("code/merge-data-gis.R")
+```
+
+[eci]: https://eci.gov.in/
+
+## Introduction
+
+There are a lot of data points available for each candidate who participates in an election. We can analyse the education level, financial status, occupation, criminal cases registered, etc from the data collected by [ECI][eci]. In this section of the analysis, we will look at the median age of candidates for every parliamentary constituency and the caste wise distribution of candidates. 
+
+## Analysis - Median Age of Candidates
+
+```{r graph-candidate-age, echo=FALSE}
+age_bins <- c(0,35, 45, 55, 65, 75,Inf)
+pal <- colorBin(palette = map_colour_palette,domain = constituency_map_file$median_age,bins = age_bins)
+
+labels <- sprintf(
+  "<strong>%s</strong><br/> Median Age: %s",
+  stringr::str_to_title(constituency_map_file$constituency_name_dm), comma(constituency_map_file$median_age,accuracy = 1)
+) %>% lapply(htmltools::HTML)
+
+constituency_map_file %>% leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    color = "white",
+    opacity = 1,
+    weight = 1,
+    dashArray = "2",
+    smoothFactor = 0.3,
+    fillColor =  pal(constituency_map_file$median_age),
+    fillOpacity = 1,
+    label = labels,
+    highlightOptions = highlightOptions(
+    weight = 2,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE)
+  ) %>% 
+  addLegend(
+    pal = pal,
+    values = ~ median_age,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright"
+  )
+
+```
