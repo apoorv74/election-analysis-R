@@ -14,12 +14,12 @@ output:
   - [Constituency Data](https://eci.gov.in/files/file/13541-32-constituency-data-summary-report/)
   - [Candidate Data](https://eci.gov.in/files/file/13539-33-constituency-wise-detailed-result/)
   
-2. Please refer to the file [code/create_constituency_master.R]() to follow the steps to process data for each constituency.
+2. Please refer to the file [code/create_constituency_master.R](https://github.com/apoorv74/election-analysis-R/blob/master/code/create_constituency_master.R) to follow the steps to process data for each constituency.
 
-3. Please refer to the file [code/create-candidate-profile.R]() to follow the steps to process data for each candidate.
+3. Please refer to the file [code/create-candidate-profile.R](https://github.com/apoorv74/election-analysis-R/blob/master/code/create-candidate-profile.R) to follow the steps to process data for each candidate.
 
 4. The Parliament Constituency (PC) GIS file (shape file) was downloaded from the DataMeet website from this [link](http://projects.datameet.org/maps/parliamentary-constituencies/)
 
-5. To plot all data on the map it is important that the geographic entities (States, PC) are refered to be same Name/ID's in the data file and shape file. Please refer to the file [code/geography-matching.R]() to see the list of geographies that had to be updated to ensure common geographies between both files.
+5. To plot all data on the map it is important that the geographic entities (States, PC) are referred by same Name or ID's in the data file and shape file. Please refer to the file [code/geography-matching.R](https://github.com/apoorv74/election-analysis-R/blob/master/code/geography-matching.R) to see the list of geographies that had to be updated to ensure common geographies between both files.
 
-6. A master file of constituencies was created by merging the data file and the shape file. Please refer to the file [code/merge-data-gis.R]() to follow the steps to merge both files. 
+6. A master file of constituencies was created by merging the data file and the shape file. Please refer to the file [code/merge-data-gis.R](https://github.com/apoorv74/election-analysis-R/blob/master/code/merge-data-gis.R) to follow the steps to merge both files. 

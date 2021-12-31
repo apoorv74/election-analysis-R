@@ -14,7 +14,7 @@ navbar:
   right:
   - icon: fab fa-github
     text: Source code
-    href: https://github.com/apoorv74/r-workshop-unext
+    href: https://github.com/apoorv74/election-analysis-R
 output:
   workflowr::wflow_html:
     toc: yes

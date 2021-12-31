@@ -13,9 +13,9 @@ output:
 To reproduce the results on your own computer, please follow these setup instructions.
 
 1. Download or clone the git repository on your computer.
-2. The raw and processed data files should be available inside the [data]() directory.
+2. The raw and processed data files should be available inside the [data](https://github.com/apoorv74/election-analysis-R/tree/master/data) directory.
 3. Install R and/or Rstudio.
-4. Install the R packages used for the analyses. The [source-libraries.R]() file contains the list of all required packages. You can also install the packages manually, at once, using the code below
+4. Install the R packages used for the analyses. The [source-libraries.R](https://github.com/apoorv74/election-analysis-R/blob/master/code/source-libraries.R) file contains the list of all required packages. You can also install the packages manually, at once, using the code below
 
 ```{r download-missing-packages, eval=FALSE}
 ipak <- function(pkg){
@@ -25,7 +25,7 @@ ipak <- function(pkg){
     sapply(pkg, require, character.only = TRUE)
 }
 
-packages <- c("tidyverse","readxl","sf","geojsonsf","leaflet","paletteer","scales","DT","knitr","kableExtra")
+packages <- c("workflowr","tidyverse","readxl","sf","geojsonsf","leaflet","paletteer","scales","DT","knitr","kableExtra")
 ipak(packages)
 
 ```
