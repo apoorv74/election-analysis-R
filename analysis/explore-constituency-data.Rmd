@@ -7,4 +7,19 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
+```{r source-files, include=FALSE}
+source("code/source-libraries.R")
+source("code/merge-data-gis.R")
+```
+
+# Dataset of Parliamentary Constituencies
+
+```{r dataset-pc, echo=FALSE}
+
+cols_to_explore <- c("state_name_updated","constituency_name_updated","elector_General_m","elector_General_w","voter_General_m","voter_General_w","candidate_Contested_m","candidate_Contested_w","polling_percentage","result_margin","votes_Total Valid Votes Polled","constituency_type_updated","margin_ratio","median_age")
+dt_pc_data <- constituency_analysis_file[,cols_to_explore]
+
+datatable(dt_pc_data,colnames = c("State","Constituency","Male electors","Female electors","Male votes","Female votes","Male candidates","Female candidates","Polling percent","Result margin","Total valid votes","Constituency type","Margin Ratio","Median age of candidates"),fillContainer = TRUE,filter = "top",options = list("pageLength" = 25))
+
+```
+
