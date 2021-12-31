@@ -56,5 +56,6 @@ Ananay Agarwal, Neelesh Agrawal, Saloni Bhogale, Sudheendra Hangal, Francesca Re
 
 2. The Verdict - Decoding India's Elections - [Link](https://www.google.co.in/books/edition/The_Verdict/sc6MDwAAQBAJ?hl=en&gbpv=0)
 
+## Credits
 
-
+This session was curated by [Apoorv Anand](https://github.com/apoorv74/) for the Online Workshop Series on `Learning R`. 

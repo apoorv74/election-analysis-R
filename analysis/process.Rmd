@@ -20,6 +20,6 @@ output:
 
 4. The Parliament Constituency (PC) GIS file (shape file) was downloaded from the DataMeet website from this [link](http://projects.datameet.org/maps/parliamentary-constituencies/)
 
-5. To plot all data on the map it is important that the geographic entities (States, PC) are refered to be same Name/ID's in the data file and shape file. Please refer to the file [code/geography-matchin.R]() to see the list of geograhies that had to be updated to ensure common geographies between both files.
+5. To plot all data on the map it is important that the geographic entities (States, PC) are refered to be same Name/ID's in the data file and shape file. Please refer to the file [code/geography-matching.R]() to see the list of geographies that had to be updated to ensure common geographies between both files.
 
-6. A master file of constituencies was created by merging the data file and the shape file. Please refer to the file [code/merge-data-gis.R] to follow the steps to merge both files. 
+6. A master file of constituencies was created by merging the data file and the shape file. Please refer to the file [code/merge-data-gis.R]() to follow the steps to merge both files. 
