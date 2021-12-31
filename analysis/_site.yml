@@ -13,7 +13,7 @@ navbar:
     href: explore-constituency-data.html
   right:
     - text: Source
-      href:
+      href: https://github.com
 output:
   workflowr::wflow_html:
     toc: yes
