@@ -1,10 +1,11 @@
- ---
+---
 title: "Electoral participation in 2019 general polls"
-author: "Apoorv Anand"
 date: "2021-12-28"
-output: workflowr::wflow_html
-editor_options:
-  chunk_output_type: console
+output:
+  workflowr::wflow_html:
+    toc: true
+    toc_float:
+      collapsed: false
 ---
 
 ```{r source-files, include=FALSE}
