@@ -1,17 +1,24 @@
-name: "r-workshop-unext"
+name: "Analysing Indian Elections (using R)"
 output_dir: ../docs
 navbar:
-  title: "r-workshop-unext"
+  title: "Analysing Indian Elections (using R)"
   left:
-  - text: Home
+  - text: Overview
     href: index.html
-  - text: About
-    href: about.html
+  - text: Setup
+    href: setup.html
   - text: License
     href: license.html
+  - text: Constituency Dataset
+    href: explore-constituency-data.html
+  right:
+    - text: Source
+      href:
 output:
   workflowr::wflow_html:
     toc: yes
     toc_float: yes
-    theme: cosmo
+    theme: readable
     highlight: textmate
+    include:
+      before_body: include/header.html
