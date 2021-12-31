@@ -7,6 +7,71 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
+```{r source-files, include=FALSE}
+source("code/source-libraries.R")
+source("code/leaflet-options.R")
+source("code/merge-data-gis.R")
+```
+
+# Introduction
+
+Analysing the margin of votes by which a candidate wins the election is an important parameter for citizen and even the political parties especially in case of a seat which is decided by low margins. In this section of the analysis, we will explore the variable `margin ratio` which is calculated as the ratio of `margin of votes` ( _difference in the number of votes between winning candidate and the runner up_ ) to `total valid votes in a constituency`.
+
+An example to illustrate how margin ratio works:
+
+Case 1:
+
+Total Votes: 1000
+Win Margin: 500 - The winning candidate received 500 more votes than the runner-up
+**Margin Ratio** = 500/1000 = 0.5 
+
+Case 2:
+
+Total Votes: 1000
+Win Margin: 200
+**Margin Ratio** = 200/1000 = 0.2
+
+_A lower margin ratio signifies a tight contest whereas a high margin ratio points towards a more one-sided election._
+
+## Analysis - How many constituencies had a margin ratio of less than 10%
+
+```{r graph-margin-ratio, echo=FALSE}
+
+color_bins <- c(0,5,15,25,35,50,Inf)
+pal <- colorBin(palette = map_colour_palette,domain = constituency_map_file$margin_ratio,bins = color_bins)
+
+labels <- sprintf(
+  "<strong>%s</strong><br/> Margin Ratio: %s",
+  stringr::str_to_title(constituency_map_file$constituency_name_dm),
+  comma(constituency_map_file$margin_ratio, accuracy = 1,suffix = "%")) %>% 
+  lapply(htmltools::HTML)
+
+constituency_map_file %>% leaflet() %>%
+  addTiles() %>%
+  addPolygons(
+    color = "white",
+    opacity = 1,
+    weight = 1,
+    dashArray = "2",
+    smoothFactor = 0.3,
+    fillColor =  pal(constituency_map_file$margin_ratio),
+    fillOpacity = 1,
+    label = labels,
+    highlightOptions = highlightOptions(
+    weight = 2,
+    color = "#666",
+    dashArray = "",
+    fillOpacity = 0.7,
+    bringToFront = TRUE)
+  ) %>% 
+  addLegend(
+    pal = pal,
+    values = ~ margin_ratio,
+    opacity = 0.7,
+    title = NULL,
+    position = "bottomright"  
+    )
+
+```
 
 
