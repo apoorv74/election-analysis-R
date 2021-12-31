@@ -36,6 +36,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -349,7 +351,11 @@ div.tocify {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com">Source</a>
+  <a href="https://github.com/apoorv74/election-analysis-R">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -382,11 +388,11 @@ div.section {
 <li><a href="https://eci.gov.in/files/file/13539-33-constituency-wise-detailed-result/">Candidate Data</a></li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Please refer to the file <a href="">code/create_constituency_master.R</a> to follow the steps to process data for each constituency.</p></li>
-<li><p>Please refer to the file <a href="">code/create-candidate-profile.R</a> to follow the steps to process data for each candidate.</p></li>
+<li><p>Please refer to the file <a href="https://github.com/apoorv74/election-analysis-R/blob/master/code/create_constituency_master.R">code/create_constituency_master.R</a> to follow the steps to process data for each constituency.</p></li>
+<li><p>Please refer to the file <a href="https://github.com/apoorv74/election-analysis-R/blob/master/code/create-candidate-profile.R">code/create-candidate-profile.R</a> to follow the steps to process data for each candidate.</p></li>
 <li><p>The Parliament Constituency (PC) GIS file (shape file) was downloaded from the DataMeet website from this <a href="http://projects.datameet.org/maps/parliamentary-constituencies/">link</a></p></li>
-<li><p>To plot all data on the map it is important that the geographic entities (States, PC) are refered to be same Name/ID’s in the data file and shape file. Please refer to the file <a href="">code/geography-matching.R</a> to see the list of geographies that had to be updated to ensure common geographies between both files.</p></li>
-<li><p>A master file of constituencies was created by merging the data file and the shape file. Please refer to the file <a href="">code/merge-data-gis.R</a> to follow the steps to merge both files.</p></li>
+<li><p>To plot all data on the map it is important that the geographic entities (States, PC) are referred by same Name or ID’s in the data file and shape file. Please refer to the file <a href="https://github.com/apoorv74/election-analysis-R/blob/master/code/geography-matching.R">code/geography-matching.R</a> to see the list of geographies that had to be updated to ensure common geographies between both files.</p></li>
+<li><p>A master file of constituencies was created by merging the data file and the shape file. Please refer to the file <a href="https://github.com/apoorv74/election-analysis-R/blob/master/code/merge-data-gis.R">code/merge-data-gis.R</a> to follow the steps to merge both files.</p></li>
 </ol>
 </div>
 

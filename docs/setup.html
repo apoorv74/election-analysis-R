@@ -36,6 +36,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -349,7 +351,11 @@ div.tocify {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com">Source</a>
+  <a href="https://github.com/apoorv74/election-analysis-R">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -377,9 +383,9 @@ div.section {
 <p>To reproduce the results on your own computer, please follow these setup instructions.</p>
 <ol style="list-style-type: decimal">
 <li>Download or clone the git repository on your computer.</li>
-<li>The raw and processed data files should be available inside the <a href="">data</a> directory.</li>
+<li>The raw and processed data files should be available inside the <a href="https://github.com/apoorv74/election-analysis-R/tree/master/data">data</a> directory.</li>
 <li>Install R and/or Rstudio.</li>
-<li>Install the R packages used for the analyses. The <a href="">source-libraries.R</a> file contains the list of all required packages. You can also install the packages manually, at once, using the code below</li>
+<li>Install the R packages used for the analyses. The <a href="https://github.com/apoorv74/election-analysis-R/blob/master/code/source-libraries.R">source-libraries.R</a> file contains the list of all required packages. You can also install the packages manually, at once, using the code below</li>
 </ol>
 <pre class="r"><code>ipak &lt;- function(pkg){
     new.pkg &lt;- pkg[!(pkg %in% installed.packages()[, &quot;Package&quot;])]
@@ -388,7 +394,7 @@ div.section {
     sapply(pkg, require, character.only = TRUE)
 }
 
-packages &lt;- c(&quot;tidyverse&quot;,&quot;readxl&quot;,&quot;sf&quot;,&quot;geojsonsf&quot;,&quot;leaflet&quot;,&quot;paletteer&quot;,&quot;scales&quot;,&quot;DT&quot;,&quot;knitr&quot;,&quot;kableExtra&quot;)
+packages &lt;- c(&quot;workflowr&quot;,&quot;tidyverse&quot;,&quot;readxl&quot;,&quot;sf&quot;,&quot;geojsonsf&quot;,&quot;leaflet&quot;,&quot;paletteer&quot;,&quot;scales&quot;,&quot;DT&quot;,&quot;knitr&quot;,&quot;kableExtra&quot;)
 ipak(packages)</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>After completing these steps, you should be able to run the analysis.</li>
