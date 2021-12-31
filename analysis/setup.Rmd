@@ -1,7 +1,37 @@
 ---
 title: "Project Setup"
 date: "2021-12-31"
-output: workflowr::wflow_html
+output:
+  workflowr::wflow_html:
+    toc: true
+    toc_float:
+      collapsed: false
 ---
 
-## Introduction
+## Setup Instructions
+
+To reproduce the results on your own computer, please follow these setup instructions.
+
+1. Download or clone the git repository on your computer.
+2. The raw and processed data files should be available inside the [data]() directory.
+3. Install R and/or Rstudio.
+4. Install the R packages used for the analyses. The [source-libraries.R]() file contains the list of all required packages. You can also install the packages manually, at once, using the code below
+
+```{r download-missing-packages, eval=FALSE}
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+}
+
+packages <- c("tidyverse","readxl","sf","geojsonsf","leaflet","paletteer","scales","DT","knitr","kableExtra")
+ipak(packages)
+
+```
+
+5. After completing these steps, you should be able to run the analysis.
+
+### Note
+
+- Please refer to the [workflowr - Getting Started](https://workflowr.github.io/workflowr/articles/wflow-01-getting-started.html) article to understand how code and analysis files are structured within the project directory. 
