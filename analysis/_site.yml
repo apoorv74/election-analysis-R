@@ -1,7 +1,7 @@
-name: "Analysing Indian Elections (using R)"
+name: Analysing Indian Elections (using R)
 output_dir: ../docs
 navbar:
-  title: "Analysing Indian Elections (using R)"
+  title: Analysing Indian Elections (using R)
   left:
   - text: Overview
     href: index.html
@@ -12,8 +12,9 @@ navbar:
   - text: Constituency Dataset
     href: explore-constituency-data.html
   right:
-    - text: Source
-      href: https://github.com
+  - icon: fab fa-github
+    text: Source code
+    href: https://github.com/apoorv74/r-workshop-unext
 output:
   workflowr::wflow_html:
     toc: yes
